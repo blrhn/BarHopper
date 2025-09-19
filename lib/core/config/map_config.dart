@@ -5,5 +5,5 @@ abstract final class MapConfig {
 }
 
 abstract final class LocationConfig {
-  static const distanceFilter = 100;
+  static const distanceFilter = 2;
 }

@@ -44,13 +44,19 @@ class Location {
     return LatLng(position.latitude, position.longitude);
   }
 
-  static Stream<LatLng?> currentCoordsListener() {
+  static Stream<LatLng?> currentCoordsListener() async* {
+    final hasPermission = await hasLocationPermission();
+    if (!hasPermission) {
+      yield null;
+      return;
+    }
+
     final locationSettings = const LocationSettings(
       accuracy: LocationAccuracy.high,
       distanceFilter: LocationConfig.distanceFilter,
     );
 
-    return Geolocator.getPositionStream(
+    yield* Geolocator.getPositionStream(
       locationSettings: locationSettings,
     ).map((position) => LatLng(position.latitude, position.longitude));
   }

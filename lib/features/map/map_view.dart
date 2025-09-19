@@ -22,6 +22,16 @@ class MapView extends ConsumerWidget {
                 children: [
                   // TODO: map marker
                   TileLayer(urlTemplate: MapConfig.urlTemplate),
+                  MarkerLayer(
+                    markers: [
+                      Marker(
+                        point: value,
+                        width: 80,
+                        height: 80,
+                        child: Icon(Icons.circle),
+                      ),
+                    ],
+                  ),
                 ],
               ),
       AsyncError(:final error) => Text("${UIMapConfig.coordsError}$error"),

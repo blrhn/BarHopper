@@ -1,6 +1,6 @@
 import 'package:bar_hop/core/router/routes.dart';
 import 'package:bar_hop/features/find/find_view.dart';
-import 'package:bar_hop/features/home_view/home_view.dart';
+import 'package:bar_hop/features/home/home_view.dart';
 import 'package:bar_hop/features/my_beers/my_beers_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
