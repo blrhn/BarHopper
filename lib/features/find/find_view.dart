@@ -5,6 +5,6 @@ class FindView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: const Text("Find"));
+    return Scaffold(body: Center(child: const Text("Find")));
   }
 }
