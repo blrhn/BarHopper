@@ -1,5 +1,6 @@
 import 'package:bar_hop/core/config/ui_config.dart';
 import 'package:bar_hop/core/theme/app_theme.dart';
+import 'package:bar_hop/features/home_view/settings_dialog.dart';
 import 'package:flutter/material.dart';
 
 import '../map/map_view.dart';
@@ -11,8 +12,21 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: context.colorScheme.primary,
-      appBar: AppBar(title: const Text(MyAppConfig.title), centerTitle: true),
+      appBar: AppBar(
+        title: const Text(MyAppConfig.title),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () => _showSettings(context),
+            icon: Icon(Icons.filter_list),
+          ),
+        ],
+      ),
       body: const MapView(),
     );
+  }
+
+  void _showSettings(BuildContext context) {
+    SettingsDialog.show(context);
   }
 }

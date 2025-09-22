@@ -8,6 +8,7 @@ part 'properties.freezed.dart';
 @freezed
 abstract class Properties with _$Properties {
   const factory Properties({
+    required String? name,
     @JsonKey(name: "address_line1") String? addressLine1,
     @JsonKey(name: "address_line2") String? addressLine2,
     required double? lon,

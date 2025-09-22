@@ -1,3 +1,4 @@
+import 'package:bar_hop/features/home_view/pub_limit_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -7,6 +8,8 @@ import '../../core/config/map_config.dart';
 import '../../core/config/ui_config.dart';
 import '../../core/providers/location_provider.dart';
 import '../pubs/data/providers/pub_provider.dart';
+import '../pubs/domain/entities/pub.dart';
+import 'pub_card.dart';
 
 class MapView extends ConsumerWidget {
   const MapView({super.key});
@@ -14,12 +17,13 @@ class MapView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final location = ref.watch(userLocationProvider);
+    final limit = ref.watch(pubLimitProvider);
 
     return switch (location) {
       AsyncData(:final value) =>
         value == null
             ? const Center(child: Text(UIMapConfig.nullCoordsText))
-            : _MapViewValue(coords: value, limit: 10),
+            : _MapViewValue(coords: value, limit: limit.toInt()),
       AsyncError(:final error) => Text("${UIMapConfig.coordsError}$error"),
       _ => const Center(child: CircularProgressIndicator()),
     };
@@ -33,7 +37,7 @@ class _MapViewValue extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final pubs = ref.watch(nearestPubsProvider(coords, 50));
+    final pubs = ref.watch(nearestPubsProvider(coords, limit));
 
     return FlutterMap(
       options: MapOptions(initialCenter: coords),
@@ -45,7 +49,10 @@ class _MapViewValue extends ConsumerWidget {
                 .map(
                   (pub) => Marker(
                     point: pub.coords!,
-                    child: const Icon(Icons.location_pin),
+                    child: IconButton(
+                      onPressed: () => _showDetails(context, pub),
+                      icon: const Icon(Icons.location_pin),
+                    ),
                   ),
                 )
                 .toList(),
@@ -54,6 +61,18 @@ class _MapViewValue extends ConsumerWidget {
           _ => const Center(child: CircularProgressIndicator()),
         },
       ],
+    );
+  }
+
+  void _showDetails(BuildContext context, Pub pub) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => SizedBox(
+        height:
+            MediaQuery.sizeOf(context).height *
+            UIMapConfig.bottomSheetHeightPercentage,
+        child: PubCard(pub: pub),
+      ),
     );
   }
 }

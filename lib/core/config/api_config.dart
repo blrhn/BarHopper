@@ -5,6 +5,7 @@ abstract final class ApiConfig {
   static const categories = "catering.pub,catering.bar,catering.taproom";
   static const biasProximity = "proximity:";
   static const filterCircle = "circle:";
+  static const unitDivider = 1000;
 
   static Map<String, dynamic> pubQuery({
     required String coords,

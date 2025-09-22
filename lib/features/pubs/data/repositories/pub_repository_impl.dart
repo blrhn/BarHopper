@@ -26,16 +26,21 @@ class PubRepositoryImpl implements PubRepository {
 
     final locationsResponse = PubResponse.fromJson(response.data!);
 
-    final pubs = locationsResponse.features.map((feature) {
-      final props = feature.properties;
-      return Pub(
-        distance: props.distance,
-        name: props.addressLine1,
-        address: props.addressLine2,
-        coords: LatLng(props.lat!, props.lon!),
-        phoneNumber: props.contact?.phone,
-      );
-    }).toList();
+    final pubs = locationsResponse.features
+        .where((feature) => feature.properties.name != null)
+        .map((feature) {
+          final props = feature.properties;
+          return Pub(
+            distance: props.distance != null
+                ? props.distance! / ApiConfig.unitDivider
+                : null,
+            name: props.addressLine1,
+            address: props.addressLine2,
+            coords: LatLng(props.lat!, props.lon!),
+            phoneNumber: props.contact?.phone,
+          );
+        })
+        .toList();
 
     return pubs;
   }

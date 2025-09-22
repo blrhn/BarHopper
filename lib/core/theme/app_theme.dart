@@ -4,36 +4,44 @@ import 'package:flutter/material.dart';
 
 class AppTheme implements AppThemeData {
   @override
-  ThemeData get light => ThemeData(
-    primaryColor: ColorPalette.vividOrange,
-    colorScheme: _colorScheme,
-  );
+  ThemeData get light => ThemeData(colorScheme: _colorScheme);
 
   ColorScheme get _colorScheme {
     return ColorScheme.light(
-      primary: ColorPalette.vividOrange,
+      primary: ColorPalette.warmGray,
       onPrimary: Colors.white,
-      primaryContainer: ColorPalette.lightSoftOrange,
-      onPrimaryContainer: ColorPalette.darkBrown,
+      primaryContainer: ColorPalette.lightHoney,
+      onPrimaryContainer: ColorPalette.deepCharcoal,
 
-      secondary: ColorPalette.saddleBrown,
+      secondary: ColorPalette.espresso,
       onSecondary: Colors.white,
-      secondaryContainer: ColorPalette.grayOrange,
-      onSecondaryContainer: ColorPalette.darkBrown,
+      secondaryContainer: ColorPalette.coffeeYellow,
+      onSecondaryContainer: ColorPalette.deepCharcoal,
 
-      tertiary: ColorPalette.darkSoftOrange,
-      onTertiary: ColorPalette.darkBrown,
-      tertiaryContainer: ColorPalette.lightSoftOrange,
-      onTertiaryContainer: ColorPalette.darkBrown,
+      tertiary: ColorPalette.richHoney,
+      onTertiary: Colors.white,
+      tertiaryContainer: ColorPalette.lightHoney,
+      onTertiaryContainer: ColorPalette.deepCharcoal,
 
       error: ColorPalette.strongRed,
       onError: Colors.white,
       errorContainer: ColorPalette.paleRed,
-      onErrorContainer: Colors.white,
+      onErrorContainer: ColorPalette.deepCharcoal,
 
-      surface: ColorPalette.mediumBrown,
-      onSurface: ColorPalette.paleYellow,
-      outline: ColorPalette.mediumBrown,
+      surface: ColorPalette.yellowGray,
+      onSurface: ColorPalette.deepCharcoal,
+      surfaceContainerHighest: ColorPalette.lightHoney,
+      onSurfaceVariant: ColorPalette.mediumBrown,
+
+      outline: ColorPalette.warmGray,
+      outlineVariant: ColorPalette.lightGray,
+
+      shadow: Colors.black26,
+      scrim: Colors.black54,
+      inverseSurface: ColorPalette.deepCharcoal,
+      onInverseSurface: ColorPalette.ivoryWhite,
+      inversePrimary: ColorPalette.lightHoney,
+      surfaceTint: ColorPalette.honey,
     );
   }
 }
