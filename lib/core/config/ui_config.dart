@@ -32,3 +32,14 @@ abstract final class UISettingsPanelConfig {
   static const panelItems = [10.0, 20.0, 30.0, 40.0, 50.0];
   static const textSliderHeight = 20.0;
 }
+
+abstract final class UISearchConfig {
+  static const appBarText = "Find a bar";
+  static const labelText = "City";
+  static const hintText = "Search for a city";
+  static const radiusText = "Radius: ";
+  static const borderRadius = 8.0;
+  static const padding = 16.0;
+  static const sizedBoxHeight = 13.0;
+  static const distances = [10.0, 20.0, 30.0, 40.0, 50.0];
+}

@@ -34,7 +34,7 @@ class AppTheme implements AppThemeData {
       onSurfaceVariant: ColorPalette.mediumBrown,
 
       outline: ColorPalette.warmGray,
-      outlineVariant: ColorPalette.lightGray,
+      outlineVariant: ColorPalette.deepCharcoal,
 
       shadow: Colors.black26,
       scrim: Colors.black54,
