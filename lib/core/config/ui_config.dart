@@ -28,6 +28,7 @@ abstract final class UIPubCardConfig {
 abstract final class UISettingsPanelConfig {
   static const panelTextTitle = "Search Settings";
   static const panelInfoText = "Maximum number of pubs: ";
-  static const panelItems = [10.0, 20.0, 30.0, 40.0, 50.0];
   static const saveButtonText = "Save";
+  static const panelItems = [10.0, 20.0, 30.0, 40.0, 50.0];
+  static const textSliderHeight = 20.0;
 }

@@ -29,7 +29,7 @@ class SettingsDialog extends ConsumerWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(UISettingsPanelConfig.panelInfoText + limit.toString()),
-            const SizedBox(height: 20),
+            const SizedBox(height: UISettingsPanelConfig.textSliderHeight),
             Slider(
               value: limit,
               min: UISettingsPanelConfig.panelItems.first,
