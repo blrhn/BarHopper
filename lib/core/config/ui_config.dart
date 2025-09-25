@@ -38,6 +38,10 @@ abstract final class UISearchConfig {
   static const labelText = "City";
   static const hintText = "Search for a city";
   static const radiusText = "Radius: ";
+  static const cityNullText = "Select a city to begin";
+  static const noPostCodeText = "No Postcode";
+  static const nullPubs = "No pubs found";
+  static const pubsError = "An error occurred while loading the pubs";
   static const borderRadius = 8.0;
   static const padding = 16.0;
   static const sizedBoxHeight = 13.0;

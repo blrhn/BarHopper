@@ -1,4 +1,3 @@
-import 'package:bar_hop/features/home_view/pub_limit_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -7,6 +6,7 @@ import 'package:latlong2/latlong.dart';
 import '../../core/config/map_config.dart';
 import '../../core/config/ui_config.dart';
 import '../../core/providers/location_provider.dart';
+import '../home_view/pub_limit_provider.dart';
 import '../pubs/data/providers/pub_provider.dart';
 import '../pubs/domain/entities/pub.dart';
 import 'pub_card.dart';
