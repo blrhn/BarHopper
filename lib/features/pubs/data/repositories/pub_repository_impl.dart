@@ -67,6 +67,7 @@ class PubRepositoryImpl implements PubRepository {
             address: props.addressLine2,
             coords: LatLng(props.lat!, props.lon!),
             phoneNumber: props.contact?.phone,
+            id: props.placeId,
           );
         })
         .toList();

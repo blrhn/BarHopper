@@ -1,7 +1,8 @@
-import 'package:bar_hop/core/providers/http_dio.dart';
-import 'package:bar_hop/features/pubs/data/repositories/pub_repository_impl.dart';
-import 'package:bar_hop/features/pubs/domain/repositories/pub_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../../../core/providers/http_dio.dart';
+import '../../domain/repositories/pub_repository.dart';
+import '../repositories/pub_repository_impl.dart';
 
 part "pub_repository_provider.g.dart";
 

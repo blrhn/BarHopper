@@ -1,8 +1,9 @@
 import 'dart:async';
 
-import 'package:bar_hop/core/config/map_config.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
+
+import '../config/map_config.dart';
 
 class Location {
   static Future<bool> hasLocationPermission() async {

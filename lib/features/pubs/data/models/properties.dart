@@ -11,6 +11,7 @@ abstract class Properties with _$Properties {
     required String? name,
     @JsonKey(name: "address_line1") String? addressLine1,
     @JsonKey(name: "address_line2") String? addressLine2,
+    @JsonKey(name: "place_id") String? placeId,
     required double? lon,
     required double? lat,
     required double? distance,

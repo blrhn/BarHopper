@@ -1,6 +1,7 @@
-import 'package:bar_hop/core/theme/app_theme_data.dart';
-import 'package:bar_hop/core/theme/color_palette.dart';
 import 'package:flutter/material.dart';
+
+import 'app_theme_data.dart';
+import 'color_palette.dart';
 
 class AppTheme implements AppThemeData {
   @override
@@ -28,9 +29,9 @@ class AppTheme implements AppThemeData {
       errorContainer: ColorPalette.paleRed,
       onErrorContainer: ColorPalette.deepCharcoal,
 
-      surface: ColorPalette.yellowGray,
+      surface: ColorPalette.lightHoney,
       onSurface: ColorPalette.deepCharcoal,
-      surfaceContainerHighest: ColorPalette.lightHoney,
+      surfaceContainerHighest: ColorPalette.yellowGray,
       onSurfaceVariant: ColorPalette.mediumBrown,
 
       outline: ColorPalette.warmGray,

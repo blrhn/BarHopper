@@ -1,8 +1,9 @@
-import 'package:bar_hop/core/config/ui_config.dart';
-import 'package:bar_hop/core/router/app_router.dart';
-import 'package:bar_hop/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'core/config/ui_config.dart';
+import 'core/router/app_router.dart';
+import 'core/theme/app_theme.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));

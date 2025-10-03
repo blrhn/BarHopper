@@ -26,6 +26,7 @@ class SearchCityBar extends ConsumerWidget {
         return TextField(
           controller: controller,
           focusNode: focusNode,
+          onTapOutside: (event) => focusNode.unfocus(),
           decoration: InputDecoration(
             label: const Text(UISearchConfig.labelText),
             hint: const Text(UISearchConfig.hintText),

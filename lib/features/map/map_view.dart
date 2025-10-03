@@ -9,7 +9,7 @@ import '../../core/providers/location_provider.dart';
 import '../home_view/pub_limit_provider.dart';
 import '../pubs/data/providers/pub_provider.dart';
 import '../pubs/domain/entities/pub.dart';
-import 'pub_card.dart';
+import '../pubs/domain/presentation/pub_card.dart';
 
 class MapView extends ConsumerWidget {
   const MapView({super.key});

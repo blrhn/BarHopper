@@ -1,8 +1,9 @@
-import 'package:bar_hop/core/config/ui_config.dart';
-import 'package:bar_hop/features/home_view/pub_limit_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../core/config/ui_config.dart';
+import 'pub_limit_provider.dart';
 
 class SettingsDialog extends ConsumerWidget {
   const SettingsDialog({super.key});

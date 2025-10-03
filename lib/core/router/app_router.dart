@@ -5,6 +5,9 @@ import '../../features/find/domain/presentation/find_view.dart';
 import '../../features/home_view/home_view.dart';
 import '../../features/my_beers/my_beers_view.dart';
 import '../../features/nav_bar/nav_bar.dart';
+import '../../features/pubs/domain/entities/pub.dart';
+import '../../features/pubs/domain/presentation/pub_review.dart';
+import '../../features/pubs/domain/presentation/pub_view.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -50,6 +53,28 @@ class AppRouter {
             ],
           ),
         ],
+      ),
+      GoRoute(
+        path: "${Routes.pub}/:id",
+        builder: (context, state) {
+          final pub = state.extra as Pub;
+          return PubView(pub: pub);
+        },
+      ),
+      GoRoute(
+        path: "${Routes.pubReview}/:id",
+        builder: (context, state) {
+          final extra = state.extra!;
+
+          return switch (extra) {
+            Pub _ => PubReview(pub: extra),
+            Map<String, dynamic> _ => PubReview(
+              pub: extra["pub"],
+              review: extra["review"],
+            ),
+            _ => HomeView(),
+          };
+        },
       ),
     ],
   );

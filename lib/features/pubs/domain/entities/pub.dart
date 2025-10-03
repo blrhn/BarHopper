@@ -6,6 +6,7 @@ class Pub {
   final LatLng? coords;
   final String? phoneNumber;
   final double? distance;
+  final String? id;
 
   const Pub({
     required this.name,
@@ -13,5 +14,6 @@ class Pub {
     required this.coords,
     required this.phoneNumber,
     required this.distance,
+    required this.id,
   });
 }

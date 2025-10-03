@@ -1,9 +1,9 @@
-import 'package:bar_hop/core/config/ui_config.dart';
 import 'package:bar_hop/core/theme/app_theme.dart';
-import 'package:bar_hop/features/home_view/settings_dialog.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/config/ui_config.dart';
 import '../map/map_view.dart';
+import 'settings_dialog.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
